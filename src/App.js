@@ -3,6 +3,7 @@ import './App.css';
 import PlayerList from './Components/Player/PlayerList';
 import PlayerSingle from './Components/Player/PlayerSingle';
 import PlayerForm from './Components/Player/PlayerForm';
+import NavBar from './Components/Navigation/NavBar'
 import axios from 'axios';
 
 class App extends Component {
@@ -38,7 +39,7 @@ class App extends Component {
     return (
       <div className="container-fluid">
         <div className="row">
-          <div className="col s12">Manu</div>
+          <NavBar />
         </div>
         <div className="row">
           <div className="col s3">
