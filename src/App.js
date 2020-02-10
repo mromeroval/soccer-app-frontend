@@ -18,7 +18,6 @@ class App extends Component {
   }
 
   updateCurrentPlayer(player) {
-    console.log(player)
     this.setState({ currentPlayer: player });
   }
 
@@ -49,7 +48,7 @@ class App extends Component {
             />
           </div>
           <div className="col s9">
-            <PlayerSingle />
+            <PlayerSingle player={this.state.currentPlayer}/>
           </div>
         </div>
         <div className="row">
