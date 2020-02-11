@@ -14,11 +14,21 @@ class App extends Component {
       currentPlayer: {}
     };
 
+    this.firstName = React.createRef();
+
     this.updateCurrentPlayer = this.updateCurrentPlayer.bind(this)
+    this.submitPlayer = this.submitPlayer.bind(this)
   }
 
   updateCurrentPlayer(player) {
     this.setState({ currentPlayer: player });
+  }
+
+  submitPlayer(player){
+    const URL = 'http://localhost:4000/players';
+    axios.post(URL, player)
+    .then( response => console.log(response))
+    .catch(error => console.log(error))
   }
 
   componentDidMount() {
@@ -53,7 +63,7 @@ class App extends Component {
         </div>
         <div className="row">
           <div className="col s12">
-            <PlayerForm />
+            <PlayerForm submitPlayer={this.submitPlayer} />
           </div>
         </div>
       </div>
